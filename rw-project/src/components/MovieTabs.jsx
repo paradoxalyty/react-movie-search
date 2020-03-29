@@ -24,7 +24,7 @@ export class MovieTabs extends Component {
         };
 
         const getClassLink = value => {
-            return `nav-link ${sort_by === value ? "active" : ""}`
+            return `btn nav-link ${sort_by === value ? "active" : ""}`
         };
 
         return (
