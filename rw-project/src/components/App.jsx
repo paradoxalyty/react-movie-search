@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-// import {moviesData} from "../moviesData";
-import {MovieItem} from "./MovieItem";
-import {API_URL, API_KEY_3} from "../api/api";
-import {MovieTabs} from "./MovieTabs";
-import {Pagination} from "./Pagination";
+// import {moviesData} from '../moviesData';
+import {MovieItem} from './MovieItem';
+import {API_URL, API_KEY_3} from '../api/api';
+import {MovieTabs} from './MovieTabs';
+import {Pagination} from './Pagination';
 
 class App extends Component {
     constructor(props) {
