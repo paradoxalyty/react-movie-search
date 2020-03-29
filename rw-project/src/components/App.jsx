@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import {MovieItem} from "./MovieItem";
 import {API_URL, API_KEY_3} from "../api/api";
 import {MovieTabs} from "./MovieTabs";
+import {Pagination} from "./Pagination";
 
 class App extends Component {
     constructor(props) {
@@ -11,7 +12,8 @@ class App extends Component {
         this.state = {
             movies: [],
             moviesWillWatch: [],
-            sort_by: "popularity.desc"
+            sort_by: "popularity.desc",
+            page: 1,
         };
     }
 
@@ -20,17 +22,22 @@ class App extends Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        console.log("didUpdate");
-        console.log("prev", prevProps, prevState);
-        console.log("this", this.props, this.state);
+        // console.log("didUpdate");
+        // console.log("prev", prevProps, prevState);
+        // console.log("this", this.props, this.state);
 
-        if(prevState.sort_by !== this.state.sort_by) {
+        if (prevState.sort_by !== this.state.sort_by) {
             this.getMovies();
+        }
+
+        if (prevState.page !== this.state.page) {
+            this.getMovies();
+            console.log(this.state.page);
         }
     }
 
     getMovies = () => {
-        fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}`)
+        fetch(`${API_URL}/discover/movie?api_key=${API_KEY_3}&sort_by=${this.state.sort_by}&page=${this.state.page}`)
             .then((response) => {
                 return response.json()
             })
@@ -73,9 +80,26 @@ class App extends Component {
     };
 
     updateSortBy = value => {
-      this.setState({
-          sort_by: value,
-      });
+        this.setState({
+            sort_by: value,
+        });
+    };
+
+    changePage = (num) => {
+        let currentPage = this.state.page;
+        let nextPage;
+
+        if (currentPage === 1 && num === -1) {
+            nextPage = 500;
+        } else if (currentPage === 500 && num === 1) {
+            nextPage = 1;
+        } else {
+            nextPage = currentPage + num;
+        }
+
+        this.setState({
+            page: nextPage,
+        });
     };
 
     render() {
@@ -104,6 +128,12 @@ class App extends Component {
                                     </div>
                                 );
                             })}
+                        </div>
+
+                        <div className="row">
+                            <div className="m-auto">
+                                <Pagination changePage={this.changePage} />
+                            </div>
                         </div>
                     </div>
                     <div className="col-3">
