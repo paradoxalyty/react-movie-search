@@ -53,6 +53,8 @@ class App extends Component {
         this.setState({
             movies: updateMovies,
         });
+
+        this.removeMovieFromWillWatch(movie);
     };
 
     addMovieToWillWatch = movie => {
