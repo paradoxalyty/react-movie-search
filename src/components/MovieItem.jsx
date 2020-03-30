@@ -69,6 +69,7 @@ export class MovieItem extends Component {
                                 this.setState({
                                     willWatch: !this.state.willWatch,
                                 });
+                                // eslint-disable-next-line
                                 {this.state.willWatch ? removeMovieFromWillWatch(movie) : addMovieToWillWatch(movie)}
                             }}
                         >
