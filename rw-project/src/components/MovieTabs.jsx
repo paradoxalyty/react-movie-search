@@ -11,6 +11,7 @@ export class MovieTabs extends Component {
         //     return false;
         // }
 
+        // Эта запись равнозначна записи в комментарии выше.
         return nextProps.sort_by !== this.props.sort_by;
     }
 
@@ -23,11 +24,13 @@ export class MovieTabs extends Component {
         //     };
         // };
 
+        // Эта запись равнозначна записи в комментарии выше.
         const handleClick = value => () => {
             updateSortBy(value);
         };
 
         const getClassLink = value => {
+            // Не уверен что это правильное решение, но ничего другого не смог придумать.
             return classnames('btn nav-link', {'active': sort_by === value});
             // return `btn nav-link ${sort_by === value ? "active" : ""}`
         };

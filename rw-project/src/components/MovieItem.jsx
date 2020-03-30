@@ -9,10 +9,6 @@ export class MovieItem extends Component {
         };
     }
 
-    // componentWillUnmount() {
-    //     console.log("unmount", this.props.movie.title);
-    // }
-
     render() {
         const {
             movie,
@@ -32,7 +28,7 @@ export class MovieItem extends Component {
                     <h6 className="card-title">{movie.title}</h6>
                     <div className="d-flex justify-content-between align-items-center">
                         <p className="mb-0">Rating: {movie.vote_average}</p>
-                        {this.state.willWatch ? (
+                        {/*{this.state.willWatch ? (
                             <button
                                 type="button"
                                 className="btn btn-success"
@@ -58,9 +54,15 @@ export class MovieItem extends Component {
                             >
                                 Add Will Watch
                             </button>
-                        )}
+                        )}*/}
 
-                        {/*<button
+                        {/*
+                        Попытался из двух кнопок сделать одну, но в консоли вылетает вот эта строка - ./src/components/MovieItem.jsx
+                        Line 70:33:  Nested block is redundant  no-lone-блочкс
+                        Не знаю что с этим делать (((
+                        */}
+
+                        <button
                             type="button"
                             className={this.state.willWatch ? "btn btn-success" : "btn btn-secondary"}
                             onClick={() => {
@@ -71,7 +73,7 @@ export class MovieItem extends Component {
                             }}
                         >
                             {this.state.willWatch ? "Remove Will Watch" : "Add Will Watch"}
-                        </button>*/}
+                        </button>
 
                     </div>
                     <button onClick={removeMovie.bind(null, movie)}>Delete movie</button>
