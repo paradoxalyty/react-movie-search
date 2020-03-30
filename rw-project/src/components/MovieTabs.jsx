@@ -1,13 +1,17 @@
 import React, {Component} from 'react';
+import classnames from 'classnames';
 
 export class MovieTabs extends Component {
 
     shouldComponentUpdate(nextProps, nextState, nextContext) {
-        if(nextProps.sort_by !== this.props.sort_by) {
-            return true;
-        } else {
-            return false;
-        }
+
+        // if(nextProps.sort_by !== this.props.sort_by) {
+        //     return true;
+        // } else {
+        //     return false;
+        // }
+
+        return nextProps.sort_by !== this.props.sort_by;
     }
 
     render() {
@@ -24,7 +28,8 @@ export class MovieTabs extends Component {
         };
 
         const getClassLink = value => {
-            return `btn nav-link ${sort_by === value ? "active" : ""}`
+            return classnames('btn nav-link', {'active': sort_by === value});
+            // return `btn nav-link ${sort_by === value ? "active" : ""}`
         };
 
         return (
