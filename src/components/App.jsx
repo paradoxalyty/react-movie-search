@@ -136,7 +136,7 @@ class App extends Component {
                         </div>
                     </div>
                     <div className="col-3">
-                        <p>Will Watch: {this.state.moviesWillWatch.length}</p>
+                        <p className="text-danger">Will Watch: {this.state.moviesWillWatch.length}</p>
                     </div>
                 </div>
             </div>
