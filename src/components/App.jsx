@@ -4,6 +4,7 @@ import {MovieItem} from './MovieItem';
 import {API_URL, API_KEY_3} from '../api/api';
 import {MovieTabs} from './MovieTabs';
 import {Pagination} from './Pagination';
+import {MoviesWillWatch} from "./MoviesWillWatch";
 
 class App extends Component {
     constructor(props) {
@@ -131,12 +132,12 @@ class App extends Component {
 
                         <div className="row">
                             <div className="m-auto">
-                                <Pagination changePage={this.changePage} />
+                                <Pagination changePage={this.changePage}/>
                             </div>
                         </div>
                     </div>
                     <div className="col-3">
-                        <p className="text-danger">Will Watch: {this.state.moviesWillWatch.length}</p>
+                        <MoviesWillWatch moviesWillWatch={this.state.moviesWillWatch}/>
                     </div>
                 </div>
             </div>
