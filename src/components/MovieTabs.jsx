@@ -36,7 +36,7 @@ export class MovieTabs extends Component {
         };
 
         return (
-            <ul className="tabs nav nav-pills">
+            <ul className="tabs nav nav-pills justify-content-center">
                 <li className="nav-item">
                     <div
                         // className={`nav-link ${

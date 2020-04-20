@@ -104,8 +104,8 @@ class App extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="row">
+            <div className="container-fluid">
+                <div className="row justify-content-center">
                     <div className="col-9">
                         <div className="row mb-4">
                             <div className="col-12">
@@ -118,7 +118,7 @@ class App extends Component {
                         <div className="row">
                             {this.state.movies.map((movie) => {
                                 return (
-                                    <div className="col-6 mb-4" key={movie.id}>
+                                    <div className="col-md-6 m mb-4" key={movie.id}>
                                         <MovieItem
                                             movie={movie}
                                             removeMovie={this.removeMovie}
@@ -136,7 +136,7 @@ class App extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-3">
+                    <div className="col-9 col-md-3 col-lg-3">
                         <MoviesWillWatch moviesWillWatch={this.state.moviesWillWatch}/>
                     </div>
                 </div>

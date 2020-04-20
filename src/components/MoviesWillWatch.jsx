@@ -5,7 +5,7 @@ export class MoviesWillWatch extends Component {
         const {moviesWillWatch} = this.props;
         return (
             <>
-                <h4>Will Watch: {moviesWillWatch.length}</h4>
+                <h4 className="text-center">Will Watch: {moviesWillWatch.length}</h4>
                 <ul className="list-group">
                     {moviesWillWatch.map(movie => (
                         <li key={movie.id} className="list-group-item">
