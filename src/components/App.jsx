@@ -8,8 +8,9 @@ export default class App extends React.Component {
 
         this.state = {
             filters: {
-                sort_by: "vote_average.desc",
+                sort_by: "popularity.desc",
             },
+            page: 1,
         };
     }
 
@@ -23,8 +24,32 @@ export default class App extends React.Component {
         });
     };
 
+    onChangePage = (page) => {
+        this.setState({
+            // page: page
+            page,
+        });
+    };
+
+    /*     changePage = (num) => {
+        let currentPage = this.state.page;
+        let nextPage;
+
+        if (currentPage === 1 && num === -1) {
+            nextPage = 500;
+        } else if (currentPage === 500 && num === 1) {
+            nextPage = 1;
+        } else {
+            nextPage = currentPage + num;
+        }
+
+        this.setState({
+            page: nextPage,
+        });
+    };
+ */
     render() {
-        const { filters } = this.state;
+        const { filters, page } = this.state;
 
         return (
             <div className="container">
@@ -33,12 +58,21 @@ export default class App extends React.Component {
                         <div className="card" style={{ width: "100%" }}>
                             <div className="card-body">
                                 <h3>Filters:</h3>
-                                <Filters filters={filters} onChangeFilters={this.onChangeFilters} />
+                                <Filters
+                                    page={page}
+                                    filters={filters}
+                                    onChangeFilters={this.onChangeFilters}
+                                    onChangePage={this.onChangePage}
+                                />
                             </div>
                         </div>
                     </div>
                     <div className="col-8">
-                        <MoviesList filters={filters} />
+                        <MoviesList
+                            filters={filters}
+                            page={page}
+                            onChangePage={this.onChangePage}
+                        />
                     </div>
                 </div>
             </div>
