@@ -1,37 +1,37 @@
 import React from "react";
-export default class SortBy extends React.Component {
+export default class PrimaryReleaseYear extends React.Component {
     static defaultProps = {
         options: [
             {
-                label: "Popularity descending",
-                value: "popularity.desc",
+                label: "2022",
+                value: "2022",
             },
             {
-                label: "Popularity ascending",
-                value: "popularity.asc",
+                label: "2021",
+                value: "2021",
             },
             {
-                label: "Rating descending",
-                value: "vote_average.desc",
+                label: "2020",
+                value: "2020",
             },
             {
-                label: "Rating ascending",
-                value: "vote_average.asc",
+                label: "2019",
+                value: "2019",
             },
         ],
     };
 
     render() {
-        const { sort_by, onChangeFilters, options } = this.props;
+        const { primary_release_year, onChangeFilters, options } = this.props;
 
         return (
             <div className="form-group">
-                <label htmlFor="sort_by">Sort by:</label>
+                <label htmlFor="primary_release_year">Release Year :</label>
                 <select
-                    id="sort_by"
+                    id="primary_release_year"
                     className="form-control"
-                    name="sort_by"
-                    value={sort_by}
+                    name="primary_release_year"
+                    value={primary_release_year}
                     onChange={onChangeFilters}
                 >
                     {options.map((option) => (

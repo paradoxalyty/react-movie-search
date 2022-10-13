@@ -9,6 +9,7 @@ export default class App extends React.Component {
         this.state = {
             filters: {
                 sort_by: "popularity.desc",
+                primary_release_year: "2022",
             },
             page: 1,
         };
@@ -31,23 +32,6 @@ export default class App extends React.Component {
         });
     };
 
-    /*     changePage = (num) => {
-        let currentPage = this.state.page;
-        let nextPage;
-
-        if (currentPage === 1 && num === -1) {
-            nextPage = 500;
-        } else if (currentPage === 500 && num === 1) {
-            nextPage = 1;
-        } else {
-            nextPage = currentPage + num;
-        }
-
-        this.setState({
-            page: nextPage,
-        });
-    };
- */
     render() {
         const { filters, page } = this.state;
 

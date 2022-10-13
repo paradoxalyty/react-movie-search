@@ -1,10 +1,11 @@
 import React from "react";
 import SortBy from "./SortBy";
+import PrimaryReleaseYear from "./PrimaryReleaseYear";
 
 export default class Filters extends React.Component {
     render() {
         const {
-            filters: { sort_by },
+            filters: { sort_by, primary_release_year },
             page,
             onChangeFilters,
             onChangePage,
@@ -13,6 +14,11 @@ export default class Filters extends React.Component {
         return (
             <form className="mb3">
                 <SortBy sort_by={sort_by} onChangeFilters={onChangeFilters} />
+
+                <PrimaryReleaseYear
+                    primary_release_year={primary_release_year}
+                    onChangeFilters={onChangeFilters}
+                />
 
                 <div className="btn-group">
                     <button
