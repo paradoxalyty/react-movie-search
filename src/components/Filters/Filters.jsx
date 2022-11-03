@@ -1,11 +1,12 @@
 import React from "react";
 import SortBy from "./SortBy";
 import PrimaryReleaseYear from "./PrimaryReleaseYear";
+import Genres from "./Genres";
 
 export default class Filters extends React.Component {
     render() {
         const {
-            filters: { sort_by, primary_release_year },
+            filters: { sort_by, primary_release_year, with_genres },
             page,
             onChangeFilters,
             onChangePage,
@@ -19,6 +20,8 @@ export default class Filters extends React.Component {
                     primary_release_year={primary_release_year}
                     onChangeFilters={onChangeFilters}
                 />
+
+                <Genres with_genres={with_genres} onChangeFilters={onChangeFilters} />
 
                 <div className="btn-group">
                     <button

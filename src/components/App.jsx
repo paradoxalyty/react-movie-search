@@ -10,6 +10,7 @@ export default class App extends React.Component {
             filters: {
                 sort_by: "popularity.desc",
                 primary_release_year: "2022",
+                with_genres: [],
             },
             page: 1,
         };
