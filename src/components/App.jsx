@@ -13,6 +13,7 @@ export default class App extends React.Component {
                 with_genres: [],
             },
             page: 1,
+            total_pages: "",
         };
     }
 
@@ -26,15 +27,16 @@ export default class App extends React.Component {
         });
     };
 
-    onChangePage = (page) => {
+    onChangePage = ({ page, total_pages = this.state.total_pages }) => {
         this.setState({
             // page: page
             page,
+            total_pages,
         });
     };
 
     render() {
-        const { filters, page } = this.state;
+        const { filters, page, total_pages } = this.state;
 
         return (
             <div className="container">
@@ -45,6 +47,7 @@ export default class App extends React.Component {
                                 <h3>Filters:</h3>
                                 <Filters
                                     page={page}
+                                    total_pages={total_pages}
                                     filters={filters}
                                     onChangeFilters={this.onChangeFilters}
                                     onChangePage={this.onChangePage}

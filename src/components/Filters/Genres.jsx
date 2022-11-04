@@ -50,30 +50,35 @@ export default class Genres extends Component {
         const { with_genres } = this.props;
         return (
             <React.Fragment>
-                <div>
-                    <button
-                        type="button"
-                        className="btn btn-outline-dark mb-1"
-                        onClick={this.resetGenres}
-                    >
-                        Show All Genres
-                    </button>
-                </div>
-                {genresList.map((genre) => (
-                    <div key={genre.id} className="form-check">
-                        <input
-                            className="form-check-input"
-                            type="checkbox"
-                            value={genre.id}
-                            id={`genre${genre.id}`}
-                            onChange={this.onChange}
-                            checked={with_genres.includes(String(genre.id))}
-                        />
-                        <label className="form-check-label" htmlFor={`genre${genre.id}`}>
-                            {genre.name}
-                        </label>
+                <div className="form-group">
+                    <div>
+                        <button
+                            type="button"
+                            className="btn btn-outline-dark mb-1"
+                            onClick={this.resetGenres}
+                        >
+                            Show All Genres
+                        </button>
                     </div>
-                ))}
+                    {genresList.map((genre) => (
+                        <div key={genre.id} className="form-check">
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                value={genre.id}
+                                id={`genre${genre.id}`}
+                                onChange={this.onChange}
+                                checked={with_genres.includes(String(genre.id))}
+                            />
+                            <label
+                                className="form-check-label"
+                                htmlFor={`genre${genre.id}`}
+                            >
+                                {genre.name}
+                            </label>
+                        </div>
+                    ))}
+                </div>
             </React.Fragment>
         );
     }

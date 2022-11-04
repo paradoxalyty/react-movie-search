@@ -2,12 +2,14 @@ import React from "react";
 import SortBy from "./SortBy";
 import PrimaryReleaseYear from "./PrimaryReleaseYear";
 import Genres from "./Genres";
+import Pagination from "./Pagination";
 
 export default class Filters extends React.Component {
     render() {
         const {
             filters: { sort_by, primary_release_year, with_genres },
             page,
+            total_pages,
             onChangeFilters,
             onChangePage,
         } = this.props;
@@ -23,27 +25,11 @@ export default class Filters extends React.Component {
 
                 <Genres with_genres={with_genres} onChangeFilters={onChangeFilters} />
 
-                <div className="btn-group">
-                    <button
-                        type="button"
-                        className="btn btn-light"
-                        disabled={page === 1}
-                        onClick={() => {
-                            onChangePage(page - 1);
-                        }}
-                    >
-                        &laquo; Prev
-                    </button>
-                    <button
-                        type="button"
-                        className="btn btn-light"
-                        onClick={() => {
-                            onChangePage(page + 1);
-                        }}
-                    >
-                        Next &raquo;
-                    </button>
-                </div>
+                <Pagination
+                    page={page}
+                    total_pages={total_pages}
+                    onChangePage={onChangePage}
+                />
             </form>
         );
     }
