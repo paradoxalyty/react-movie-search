@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,KACI,kBACJ,CAEA,kBACI,YAAa,CACb,gBACJ","file":"main.64c62cf2.chunk.css","sourcesContent":["body {\r\n    background: #fdfdfd;\r\n}\r\n\r\n.card-img--height {\r\n    height: 180px;\r\n    object-fit: cover;\r\n}\r\n"]}
