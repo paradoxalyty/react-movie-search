@@ -1,5 +1,5 @@
 import React from "react";
-export default class SortBy extends React.Component {
+export default class SortBy extends React.PureComponent {
     static defaultProps = {
         options: [
             {

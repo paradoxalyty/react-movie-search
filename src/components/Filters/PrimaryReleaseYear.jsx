@@ -1,5 +1,5 @@
 import React from "react";
-export default class PrimaryReleaseYear extends React.Component {
+export default class PrimaryReleaseYear extends React.PureComponent {
     static defaultProps = {
         options: [
             {

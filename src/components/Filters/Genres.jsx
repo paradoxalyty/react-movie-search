@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import { API_KEY_3, API_URL } from "../../api/api";
 
-export default class Genres extends Component {
+export default class Genres extends React.PureComponent {
     constructor() {
         super();
 
@@ -48,6 +48,7 @@ export default class Genres extends Component {
     render() {
         const { genresList } = this.state;
         const { with_genres } = this.props;
+
         return (
             <React.Fragment>
                 <div className="form-group">
