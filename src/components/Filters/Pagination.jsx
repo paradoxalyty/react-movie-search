@@ -19,7 +19,7 @@ export default class Pagination extends React.PureComponent {
         const { page, total_pages } = this.props;
 
         return (
-            <nav className="form-group d-flex justify-content-between align-items-center">
+            <nav className="form-group d-flex justify-content-between align-items-center flex-wrap">
                 <div className="btn-group">
                     <button
                         type="button"

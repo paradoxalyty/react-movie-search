@@ -84,7 +84,7 @@ export default class MoviesList extends Component {
             <div className="row">
                 {movies.map((movie) => {
                     return (
-                        <div key={movie.id} className="col-6 mb-4">
+                        <div key={movie.id} className="col-sm-12 col-md-6 mb-4">
                             <MovieItem item={movie} />
                         </div>
                     );

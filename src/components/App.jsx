@@ -41,7 +41,7 @@ export default class App extends React.Component {
         return (
             <div className="container">
                 <div className="row mt-4">
-                    <div className="col-4">
+                    <div className="col-sm-12 col-lg-4">
                         <div className="card" style={{ width: "100%" }}>
                             <div className="card-body">
                                 <h3>Filters:</h3>
@@ -55,7 +55,7 @@ export default class App extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div className="col-8">
+                    <div className="col-sm-12 col-lg-8">
                         <MoviesList
                             filters={filters}
                             page={page}
